@@ -1,15 +1,15 @@
-import pickle
 import string
 
 text = "Peggy Masuku put the finishing touches on the welcome sign to her homestead in south-western Zimbabwe's Matobo district. " \
        "She surveyed her handiwork, six months of designing and painting her huts in anticipation of an annual competition, " \
        "My Beautiful Home, which recognises the most beautiful traditionally decorated homes in the district"
-with open('text', 'wb') as fragment:
-    pickle.dump(text, fragment)
-with open('text', 'rb') as fragment:
-    text1 = pickle.load(fragment)
+with open('text', 'w') as fragment:
+    fragment.write(text)
+with open('text', 'r') as fragment:
+    count_lines1 = fragment.readlines()
+    print(count_lines1)
 letter = 0
-for i in text1.strip():
+for i in text.strip():
     if i == ' ' or i == "'" or i == ',' or i == '-' or i == '.':
         continue
     else:
